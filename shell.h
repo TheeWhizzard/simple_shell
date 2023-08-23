@@ -138,10 +138,10 @@ char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
 /* toem_string1.c */
-char *_strcpy(char *, char *);
-char *_strdup(const char *);
-void _puts(char *);
-int _putchar(char);
+char *_strcpy(char *dest, const char *src);
+char *_strdup(const char *str);
+void _puts(const char *str);
+int _putchar(char c);
 
 /* toem_exits.c */
 char *_strncpy(char *, char *, int);
@@ -173,10 +173,10 @@ int print_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
-/* toem_builtin.c */
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+/* toem_exit.c */
+int custom_exit(info_t *info);
+int custom_cd(info_t *info);
+int custom_help(info_t *info);
 
 /* toem_builtin1.c */
 int _myhistory(info_t *);
@@ -192,12 +192,12 @@ void clear_info(info_t *);
 void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
-/* toem_environ.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+/* toem_env.c */
+int print_env(info_t *info);
+char *get_env_value(info_t *info, const char *name);
+int set_env_var(info_t *info);
+int unset_env_var(info_t *info);
+int populate_env_list(info_t *info);
 
 /* toem_getenv.c */
 char **get_environ(info_t *);
