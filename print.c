@@ -1,29 +1,25 @@
 #include <stdio.h>
-#include "shell.h"
 
 /**
  * print_message - Prints a message 5 times
- *
  */
 void print_message(void)
 {
-        int i;
+    int i;
 
-        for (i = 0; i < 5; i++)
-        {
-                printf("Hello, Betty!\n");
-        }
+    for (i = 0; i < 5; i++)
+    {
+	    printf("Hello, Betty!\n");
+    }
 }
 
 /**
  * main - Entry point of the program
- *
- * Return: success 0
+ * Return: 0 (success)
  */
 int main(void)
 {
-        print_message();
-
-        return (0);
+    print_message();
+    return (0);
 }
 
