@@ -33,6 +33,7 @@ char *_strdup(const char *str)
 {
 	int length = 0;
 	char *ret;
+	int i;
 
 	if (str == NULL)
 		return (NULL);
@@ -44,7 +45,7 @@ char *_strdup(const char *str)
 	if (ret == NULL)
 		return (NULL);
 
-	for (int i = 0; i <= length; i++)
+	for (i = 0; i <= length; i++)
 		ret[i] = str[i];
 
 	return (ret);
@@ -93,3 +94,41 @@ int _putchar(char c)
 	return (1);
 }
 
+/**
+ * main - Entry point of the program
+ *
+ * Return: 0 on success
+ */
+int main(void)
+{
+	char source[] = "Hello, World!";
+	char destination[50];
+	int i;
+	char *duplicate;
+
+	_strcpy(destination, source);
+
+	printf("Copied String: %s\n", destination);
+
+	duplicate = _strdup(source);
+
+	if (duplicate != NULL)
+	{
+		printf("Duplicated String: %s\n", duplicate);
+		free(duplicate);
+	}
+	else
+	{
+		printf("Memory allocation for duplication failed.\n");
+	}
+	_puts("Printing a string using _puts\n");
+
+	printf("Printing characters one by one:\n");
+	for (i = 0; source[i] != '\0'; i++)
+	{
+		_putchar(source[i]);
+	}
+	_putchar('\n');
+
+	return (0);
+}

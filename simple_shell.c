@@ -17,6 +17,7 @@
 int main(void)
 {
 	char input[MAX_INPUT_LENGTH];
+	pid_t pid;
 
 	while (1)
 	{
@@ -30,7 +31,7 @@ int main(void)
 		}
 		input[strlen(input) - 1] = '\0';
 
-		pid_t pid = fork();
+		pid = fork();
 
 		if (pid == 0)
 		{
