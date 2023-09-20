@@ -162,11 +162,11 @@ int _isalpha(int);
 int _atoi(char *);
 
 /* toem_errors1.c */
-int _erratoi(char *);
-void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int err_atoi(char *s);
+void print_error_message(info_t *info, char *estr);
+int print_decimal(int input, int fd);
+char *convert_to_string(long int num, int base, int flags);
+void remove_first_comment(char *buf);
 
 /* toem_exit.c */
 int custom_exit(info_t *info);
